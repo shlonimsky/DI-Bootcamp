@@ -1,0 +1,74 @@
+body{
+    margin: 0;
+    background-color:#f1f1f1;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2vh;
+}
+
+/* -----Header styling----- */
+header{
+    background-color:#f1f1f1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+      font-size: 2vh;
+}
+header>p, header>button{
+    margin: 1%;
+}
+button{
+    background-color: rgb(32, 131, 253);
+    color: white;
+    border: rgb(32, 131, 253) solid 3px ;
+    border-radius: 10%;
+    font-size: 2vh;
+}
+
+/* ---The email section styling--- */
+article.email{
+    background-image: url(https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+    background-position: center;
+    background-size: cover;
+    height: 50vh;
+}
+div.email{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(128, 128, 128, 0.5);
+    color: white;
+    font-size: 5vh;
+    justify-content: center;
+    text-align: center;
+    height: 50vh;
+}
+input{
+   width: 30vw;
+   font-size: 2vh;
+}
+
+i{
+    font-size: 300%;
+    color:  rgb(32, 131, 253);
+}
+form button{
+    padding:0% 5%;
+    font-size: 2vh;
+}
+article.info{
+    display: flex;
+    gap: 10%;
+    margin-top: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
+
+}
+div.info{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: rgba(150, 149, 149, 0.666);
+}
+h3{
+    font-size: 150%;
+    color: black;
+ }

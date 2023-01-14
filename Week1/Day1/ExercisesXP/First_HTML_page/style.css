@@ -1,0 +1,15 @@
+table:first-of-type{
+    color: red;
+    width: 100%;
+}
+th,td{
+    border: 2px solid;
+    text-align: center;
+}
+img{
+    width: 50%;
+    margin-left: 25%;
+}
+ol{
+    list-style-type: upper-roman;
+}
