@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');*{
+    margin: 0;
+    font-family: 'Righteous';
+}
+nav{
+    background-color: black;
+    color: white;
+    text-transform: uppercase;
+}
+ul{
+    display: flex;
+  justify-content: end;
+    list-style: none;
+}
+li{
+    padding: 20px;
+}
+/* The main section styling */
+section{
+    background-image: url(https://user-images.githubusercontent.com/30896388/168069577-2f570d08-61d3-49d8-b7dd-c4b9192aaf68.jpg);
+    background-position: center;
+    background-size: cover;
+    padding-left: 10%;
+    position: relative;
+    height: 100vh;
+}
+img{
+    filter: invert();
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 2%;
+    top: 2%;
+}
+h1{
+    text-transform: uppercase;
+    font-size: 250%;
+    position: absolute;
+    top: 50vh;
+    font-size: 10vh;
+    font-weight: bold;
+}
+p{
+    font-size: 10px;
+    width: 50vw;
+    position: relative;
+    top: 70vh;
+}

@@ -1,0 +1,115 @@
+/* Bold font */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
+/* Regular font */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Comfortaa, 'Arial Narrow', Arial, sans-serif;
+}
+/* Devide the sections */
+body{
+    display: flex;
+    /* text-align: center; */
+}
+/* section sizes */
+section{
+    text-align: center;
+    width: 50vw;
+    height: 100vh;
+    
+}
+/* Left section styling */
+section.left{
+    background-color: rgb(232, 231, 232);;
+    padding-top: 30vh;
+}
+h1{
+    font-size: 200%;
+}
+/* Input Field Styling */
+input.left{
+    width: 40vw;   
+    padding: 7px;
+    margin: 10px 0;
+}
+/* Separate Remember me and Forgot password */
+div.login{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 7vw;
+    margin-right: 5vw;
+}
+input[type=checkbox] {
+    position: absolute;
+    left: 5vw;
+}
+
+span a{
+    text-decoration: none;
+   color: black;
+}
+
+/* LogIn button */
+input.left:last-of-type{
+   background-color: rgb(181, 18, 217);
+   color: white;
+   border: none;
+}
+
+
+/* Icons of social media */
+p.connect{
+    margin: 20px 0 10px; 
+    text-align: center;
+    border-bottom: 1px solid #000; 
+    line-height: 0.1em;
+}
+p.connect>span{
+    background-color: rgb(232, 231, 232);
+}
+i{
+    color: rgba(216, 219, 220, 0.373);
+    -webkit-text-stroke: 2px gray;
+    font-size: 150%;
+    padding: 20px 05px 0 5px;
+   text-decoration: none;
+}
+/* Footer */
+footer{
+    position: fixed;
+    bottom: 2%;
+    width: 50vw;
+}
+/* Right Section Styling */
+section.right{
+    background-image: linear-gradient(to bottom right, rgb(7, 0, 11), rgb(181, 18, 217));
+    color: white;
+    padding-top: 25vh;
+}
+/* Icons styling */
+.right>i{
+    -webkit-text-stroke: 6px white;
+   text-decoration: none;
+}
+i.fa-user-plus{
+    font-size: 5rem;
+}
+a{
+    text-decoration: none;
+}
+
+.right i,.right h1,.right p{
+    padding: 1%;
+}
+button{
+    border-radius: 50px;
+    background-color: rgba(128, 18, 217, 0);
+    border: white solid;
+    color: white;
+    margin: 0;
+    width: 30vw;
+}
+button i{
+    -webkit-text-stroke: 1px white;
+}

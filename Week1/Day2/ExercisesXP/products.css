@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+   font-family: Quicksand;
+}
+/* NavBar styling */
+nav{
+    position: fixed;
+    top: 0;
+    height: 5vh;
+}
+nav, footer{
+    background-color: rgba(24, 27, 61, 0.6);
+    color: rgb(255, 255, 255);
+    width: 100%;
+}
+a{
+    color: rgb(255, 255, 255);  
+    text-decoration: none;
+}
+ul, footer{
+    padding-left: 3vw;
+    padding-right: 3vw;
+    display: flex;
+    list-style: none;
+    justify-content: end;
+    font-size: 3vh;
+}
+li{
+    padding: 0 3%;
+}
+i{
+    position: absolute;
+    top: 2%;
+    left: 2%;
+}
+/* Product Section Styling */
+section{
+    background-color: rgba(246, 236, 236, 0.98);
+    padding-bottom: 5%;
+}
+h1{
+    text-align: center;
+    padding: 5vh;
+    color: rgb(114, 111, 111);
+}
+.row{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 4vh;
+}
+img{
+    width: 30vw;
+}
+img:hover{
+    
+}
+.discription{
+    text-align: center;
+}
+.new-price{
+    color: darkgreen;
+}
+span.last-price{
+    text-decoration: line-through;
+    color: gray;
+    font-size: 0.8rem;
+}
+button:hover{
+    background-color: rgba(24, 27, 61, 0.6);
+    color: white;
+}
+
+footer{
+    height: 10vh;
+    justify-content: space-around;
+    align-items: center;
+}

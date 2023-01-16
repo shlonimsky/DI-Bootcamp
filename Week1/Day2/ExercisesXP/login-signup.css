@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    font-family: Quicksand;
+}
+/*Page Background*/
+
+body{
+        background-color: rgba(246, 236, 236, 0.98);
+        height: 100%;
+        padding-top: 5vh;
+}
+/* Navigation bar styling */
+nav{
+    position: fixed;
+    top: 0;
+    height: 5vh;
+}
+nav{
+    background-color: rgba(24, 27, 61, 0.6);
+    color: rgb(255, 255, 255);
+    width: 100%;
+}
+a{
+    color: rgb(255, 255, 255);  
+    text-decoration: none;
+    font-size: vw;
+}
+ul{
+    padding-left: 3vw;
+    padding-right: 3vw;
+    display: flex;
+    list-style: none;
+    justify-content: end;
+}
+li{
+    padding: 0 3%;
+}
+i{
+    position: absolute;
+    top: px;
+    left: 2%;
+}
+/* Registration section styling */
+section{
+    height: 100%;
+}
+h1{
+    text-align: center;
+    margin: 3% 0;
+    font-size: 5vh;
+}
+form{
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2vh;
+    font-size: 1.9em;}
+label{
+   width: 45vw;
+
+}
+input{
+    width: 40vw;
+    font-size: 4vh;
+}
+/* Log In Section */
