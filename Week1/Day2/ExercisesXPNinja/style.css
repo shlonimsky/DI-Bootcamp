@@ -9,20 +9,22 @@
 }
 /* Devide the sections */
 body{
-    display: flex;
-    /* text-align: center; */
+    /* display: flex; */
+    display: inline-block;
 }
 /* section sizes */
 section{
+    
     text-align: center;
     width: 50vw;
     height: 100vh;
-    
+    display: inline-block;
 }
 /* Left section styling */
 section.left{
     background-color: rgb(232, 231, 232);;
     padding-top: 30vh;
+    float: left;
 }
 h1{
     font-size: 200%;
