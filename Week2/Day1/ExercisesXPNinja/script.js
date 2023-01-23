@@ -25,9 +25,14 @@ true != true
 // Console.log the sum of the numbers.
 // Hint: use some string methods
 // let inputData = prompt('please,enter a string of numbers separated by commas');
+
+// // let numbers = Array.from(inputData);
+// let numbers = inputData.split(',');
+// console.log( typeof(numbers));
+
 // // let numbers = inputData.split(/,/g);
 // let var1 = Number(inputData);
-// console.log(var1);
+// // console.log(var1);
 
 
 // Exercise 3 : Find Nemo
@@ -36,8 +41,7 @@ true != true
 // If you can’t find Nemo, console.log “I can’t find Nemo”.
 // let sentence = prompt(`Please, write a sentence containing the word “Nemo”. For example "I love the movie named Nemo"`);
 // sentence = sentence.toLowerCase()
-// sentence=sentence.toString()
-// let sentenceArray = sentence.split(',');
+// let sentenceArray = sentence.split('s');
 // let found = sentenceArray[0].indexOf('nemo');
 // console.log(sentence)
 
@@ -53,10 +57,19 @@ true != true
 const num = prompt(`Please, enter a number:`);
 let final;
 if (num < 2) {
- final = 'Boom'
-} else if (num > 2){
+ final = 'Boom';
+} else {
     let num1 = 'o';
-     final = `B${num1.padStart(num,'o')}m`
-} else if(num % 2 == 0){
-    final = final+'!'
+     final = `B${num1.padStart(num,'o')}m`;
+} 
+if (num % 2 == 0) {
+    final = final+'!';
+    alert(final)
+    if (num % 5 == 0){
+final = final.toUpperCase();
+    } else {
+alert(final);
+    }
+} else {
+alert(final)
 }
