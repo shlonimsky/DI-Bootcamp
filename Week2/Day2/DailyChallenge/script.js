@@ -8,12 +8,14 @@
 // If the word “bad” comes after the word “not”, you should replace the whole “not…bad” substring with “good”, then console.log the result.
 // For example, the result here should be : “The movie is good, I like it”
 // If the word “bad” does not come after “not” or the words are not in the sentence, console.log the original sentence.
-let sentence = "The movie is not so bad, I like it";
+
+let sentence = "The movie is that so bad, I like it";
 let wordNot = sentence.indexOf('not');
 let wordBad = sentence.indexOf('bad');
-if (wordBad > wordNot){
-    sentence.slice()
- sentence = sentence.replace()
+if (wordBad > wordNot) {
+ let part = sentence.slice(wordNot,wordBad+3);
+ sentence = sentence.replace(part, 'good');
+ console.log(sentence);
+} else {
+    console.log(sentence);
 }
-
-console.log(wordBad)
