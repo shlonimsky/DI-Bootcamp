@@ -23,3 +23,41 @@ switch (language) {
     default:
         alert(`01110011 01101111 01110010 01110010 01111001`);
 }
+
+// Exercise 2 : The Grade Assigner
+// Ask the user for their grade.
+// If the grade is bigger than 90, console.log “A”
+// If the grade is between 80 and 90 (included), console.log “B”
+// If the grade is between 70(included) and 80 (included), console.log “C”
+// If the grade is lower than 70, console.log “D”
+
+const grade = prompt(`Please, enter your Grade (from A to D):`).toLowerCase();
+if (grade>90){
+    console.log(`A`)
+} else if (grade>80) {
+    console.log(`B`)
+} else if (grade>=70) {
+    console.log(`C`)
+} else {
+    console.log(`D`)
+}
+
+// Exercise 3 : Verbing
+// Prompt the user for a string. It must be a verb.
+// If the length of the string is at least 3 and the string doesn’t end with “ing”, add ‘ing’ to the end of the string.
+// If the length of the string is at least 3 and the string ends with “ing” add “ly” to it’s end.
+// If the length of the string is less than 3, leave it unchanged.
+// Example:
+let verb = prompt(`Please, enter the verb:`).toLowerCase();
+let length = verb.length;
+console.log(length);
+if (verb.length>=3) {
+    let endOfVerb = verb.slice(length-3);
+    if (endOfVerb == "ing") {
+        verb += 'ly'
+    } else {
+        verb+='ing'
+    }
+} 
+    console.log(verb)
+
