@@ -12,7 +12,7 @@
 let sentence = "The movie is that so bad, I like it";
 let wordNot = sentence.indexOf('not');
 let wordBad = sentence.indexOf('bad');
-if (wordBad > wordNot) {
+if ((wordBad > wordNot) && (wordNot != -1)) {
  let part = sentence.slice(wordNot,wordBad+3);
  sentence = sentence.replace(part, 'good');
  console.log(sentence);
