@@ -22,17 +22,13 @@ infoAboutPerson("Josh", 12, "yellow");
 
 // 🌟 Exercise 2 : Tips
 // John created a simple tip calculator to help calculate how much to tip when he and his family go to restaurants.
-
 // Create a function named calculateTip() that takes no parameter.
 // Inside the function, use prompt to ask John for the amount of the bill.
-
 // Here are the rules
 // If the bill is less than $50, tip 20%.
 // If the bill is between $50 and $200, tip 15%.
 // If the bill is more than $200, tip 10%.
-
 // Console.log the tip amount and the final bill (bill + tip).
-
 // Call the calculateTip() function.
 function calculateTip() {
     let bill = +prompt(`Please, enter the amount of the bill in $`);
@@ -46,9 +42,9 @@ function calculateTip() {
     }
     console.log (`The tip you have to leave is ${tip}$`)
 }
-// calculateTip();
-// calculateTip();
-// calculateTip();
+calculateTip();
+calculateTip();
+calculateTip();
 
 // 🌟 Exercise 3 : Find The Numbers Divisible By 23
 // Create a function call isDivisible() that takes no parameter.
@@ -89,7 +85,6 @@ const prices = {
 // It means that you have 1 banana, 1 orange and 1 apple in your cart.
 // Create a function called myBill() that takes no parameters.
 // The function should return the total price of your shoppingList. In order to do this you must follow these rules:
-
 // The item must be in stock. (Hint : check out if .. in)
 // If the item is in stock find out the price in the prices object.
 // Call the myBill() function.
@@ -108,7 +103,7 @@ function myBill(){
     console.log(`Now in stock:`)
     console.log(stock)
 }
-// myBill()
+myBill()
 
 // Exercise 5 : What’s In My Wallet ?
 // 1. Create a function named changeEnough(itemPrice, amountOfChange) that receives two arguments :
@@ -130,7 +125,7 @@ function changeEnough (itemPrice, amountOfChange=[7,2,1,3]){
     }
 }
 
-// console.log(changeEnough(4.25, [25, 20, 5, 0]))
+console.log(changeEnough(4.25, [25, 20, 5, 0]))
 
 // 🌟 Exercise 6 : Vacations Costs
 // Let’s create functions that calculate your vacation’s costs:
@@ -138,17 +133,18 @@ function changeEnough (itemPrice, amountOfChange=[7,2,1,3]){
 // It should ask the user for the number of nights they would like to stay in the hotel.
 // If the user doesn’t answer or if the answer is not a number, ask again.
 // The hotel costs $140 per night. The function should return the total price of the hotel.
-function hotelCost() {
+function hotelCost(textHotel) {
     let nights;
     let price = 140;
     do {
-        nights = +prompt(`How many nights would you like to stay?`)
+        nights = textHotel;
     }
     while  (isNaN(nights) || nights == " ")
     let amountNight = price*nights;
     return amountNight;
     }
     // hotelCost()
+
 // Define a function called planeRideCost().
 // It should ask the user for their destination.
 // If the user doesn’t answer or if the answer is not a string, ask again.
@@ -156,7 +152,7 @@ function hotelCost() {
 // “London”: 183$
 // “Paris” : 220$
 // All other destination : 300$
-function planeRideCost() {
+function planeRideCost(textTicket) {
     let destination;
     let location = {
         'london': 183,
@@ -164,7 +160,7 @@ function planeRideCost() {
         'other' : 300
     }
     do {
-        destination = prompt(`Where do you travell?`).toLowerCase()
+        destination = textTicket;
     }
     while  (destination == "" || !isNaN(destination))
     // isNaN(destination) || destination === " "
@@ -184,11 +180,11 @@ function planeRideCost() {
 // Calculate the cost to rent the car. The car costs $40 everyday.
 // If the user rents a car for more than 10 days, they get a 5% discount.
 // The function should return the total price of the car rental.
-function rentalCarCost() {
+function rentalCarCost(textCar) {
     let daysOfCar;
     let rent = 40;
     do {
-        daysOfCar = +prompt(`For how many days would you like to rent a car?`)
+        daysOfCar = textCar;
     }
     while  (isNaN(daysOfCar) || daysOfCar == " ")
     amountOfCar = 40*daysOfCar;
@@ -208,12 +204,16 @@ function rentalCarCost() {
 // Call the function totalVacationCost()
 // Bonus: Instead of using a prompt inside the 3 first functions, only use a prompt inside the totalVacationCost() function. You need to change the 3 first functions, accordingly.
 function totalVacationCost(){
-    const car = rentalCarCost();
-    const hotel = hotelCost();
-    const ticket = planeRideCost();
+    const textTicket = prompt(`Where do you travell?`).toLowerCase();
+    const textHotel = +prompt(`How many nights would you like to stay?`);
+    const textCar = +prompt(`For how many days would you like to rent a car?`);
+    const ticket = planeRideCost(textTicket);
+    const hotel = hotelCost(textHotel);
+    const car = rentalCarCost(textCar);
+ 
     console.log(`Total amount for the tickets is : ${ticket}`);
     console.log(`Total amount for the hotel is: ${hotel}`);
-    console.log(`Total amount for car renting is: ${car} `);   
+    console.log(`Total amount for car rent is: ${car} `);   
     console.log(`Total for the travelling: ${car+hotel+ticket}`);
 }
 totalVacationCost()
