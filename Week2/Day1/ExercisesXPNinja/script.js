@@ -1,33 +1,33 @@
-// 5 >= 1
-// // true
-// 0 === 1
-// // false
-// 4 <= 1
-// // false
-// 1 != 1
-// // false
-// "A" > "B"
-// // false
-// "B" < "C"
-// // true
-// "a" > "A"
-// // NaN. The correct answer is true, because of ASCII Code. 
-// // First goes A,B,C... then a,b,c. so, 0097>0065
-// "b" < "A"
-// // false because 0098>0065
-// true === false
-// // false
-// true != true
-// // false
+5 >= 1
+// true
+0 === 1
+// false
+4 <= 1
+// false
+1 != 1
+// false
+"A" > "B"
+// false
+"B" < "C"
+// true
+"a" > "A"
+// NaN. The correct answer is true, because of ASCII Code. 
+// First goes A,B,C... then a,b,c. so, 0097>0065
+"b" < "A"
+// false because 0098>0065
+true === false
+// false
+true != true
+// false
 
 // // Exercise 2 : Ask For Numbers
 // // Ask the user for a string of numbers separated by commas
 // // Console.log the sum of the numbers.
 // // Hint: use some string methods
-// let inputData = prompt('please,enter a string of 3 numbers separated by commas');
-// let numbers = inputData.split(',');
-// let sum = (+numbers[0])+(+numbers[1])+(+numbers[2]);
-// alert(`The summ of the numbers ${numbers} is ${sum}`);
+let inputData = prompt('please,enter a string of 3 numbers separated by commas');
+let numbers = inputData.split(',');
+let sum = (+numbers[0])+(+numbers[1])+(+numbers[2]);
+alert(`The summ of the numbers ${numbers} is ${sum}`);
 
 
 // Exercise 3 : Find Nemo
