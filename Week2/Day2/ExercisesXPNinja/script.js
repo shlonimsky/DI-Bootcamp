@@ -31,7 +31,7 @@ zip = +zip;
 zip = prompt(`Enter zip-code of 5 numbers`);
 zipLength = zip.length;
 zip = +zip;
- if (zipLength === 5 && !isNaN(zip) && zip) {
+ if (zipLength === 5 && zip =\w\ && zip) {
     alert(`Your zip-code was successfully received`)
 } else {
     alert(`oopsss... Error`)
