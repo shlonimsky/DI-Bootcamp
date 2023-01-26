@@ -7,10 +7,10 @@ let sentence = prompt(`Please, enter several words (separated by commas and spac
 sentence = sentence.split(", ");
 console.log(sentence);
 let longest = 0;
-for (let i of sentence) {
- if (i.length>longest){
-    longest = i.length;
-    continue;
+// let arr = ["Hello", "myfriend", "by"]
+for (let word of sentence) {
+ if (word.length>longest){
+    longest = word.length;
  }
 }
 let div;
@@ -19,11 +19,9 @@ for (let i = -1; i <= sentence.length; i++){
         div = "";
         div = div.padEnd(longest+4,"*")
         console.log(div)
-        continue
     } else  {
         div = "";
         div = "* "+sentence[i] + div.padEnd(longest-sentence[i].length," ") + " *";
         console.log(div);
-        continue
     } 
 }
