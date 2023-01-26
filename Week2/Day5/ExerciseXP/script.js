@@ -8,7 +8,7 @@ function playTheGame(){
         do {
             num = prompt(`Please, enter a number from 0 to 10`);
         }
-        // I added charCodeAt(0) to exept a space, because it gives 0 that counts like an attempt.
+        // I added charCodeAt(0) to exclude a space, because it gives 0 that counts like an attempt.
         while (num == "" || num.charCodeAt(0) === 32 || isNaN(+num) || num<0 || num>10)
     }
     num = Number(num);
