@@ -19,6 +19,7 @@ for (let i = 1; i<=2; i++){
     }
 }
 
+
 // Daily Challenge GOLD: Bubble Sort
 const numbers = [5,0,6,1,7,4,2,9,3,8];
 // Using the .toString() method convert the array to a string.
@@ -30,31 +31,26 @@ console.log(typeof numString);
 let numJoin = numbers.join("+")
 console.log(numJoin);
 console.log(typeof numJoin);
-// Bonus : To do this Bonus look up how to work with nested for loops
-// Sort the numbers array in descending order, do so using for loops (Not using built-in sort methods).
-// The output should be: [9,8,7,6,5,4,3,2,1,0]
+
+// “Bubble Sort”
 // Hint: The algorithm is called “Bubble Sort”
 // Use a temporary variable to swap values in the array.
 // Use 2 “nested” for loops (Nested means one inside the other).
-// Add comments and console.log the result for each step, this will help you understand.
 let x;
-let newNumbers = numbers;
-console.log(newNumbers)
-for (let i=0 ;i <= numbers.length-1; i++) {
-    // x = numbers[i]
-//    console.log(newNumbers[i]);
-//    console.log(newNumbers);
-   for (j = 1; j <=numbers.length-1; j++ ) {
-    if (numbers[i]>numbers[j]) {
-        continue}
-        {
-        x = numbers[j];
-        console.log(x)
-        continue
-    }
-  
-   }
-   newNumbers[i] = x
-   console.log(newNumbers[i])
+const bubbleSort = [5,0,6,1,7,4,2,9,3,8];
+console.log(bubbleSort)
+// Calling the function to sort the array
+for (let i=0 ;i <= bubbleSort.length-3; i++) {
+    step(bubbleSort);
+console.log(bubbleSort);
 }
-console.log(newNumbers)
+// Function that does one loop of sort by putting the smallest number to the end
+function step(arr){
+for ( let j = 0; j <=arr.length-2; j++ ) {
+    if (arr[j]>arr[j+1]){
+    } else {
+        [arr[j], arr[j+1]] = [arr[j+1], arr[j]];
+    }
+   }
+}
+step(bubbleSort)
