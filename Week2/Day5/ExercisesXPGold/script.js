@@ -29,9 +29,11 @@ function operator(operator){
 
 
 function equal(){
+    
     let result;
     numb=+numberString;
     expCalc.push(numb)
+    console.log(expCalc)
     switch (expCalc[1]){
         case '+' : result = expCalc[0]+expCalc[2]
         break
@@ -46,11 +48,21 @@ function equal(){
     expression += "="+result;
 console.log(expression)
 }
-// reset()
-// function clear(){
-//     console.log(`Clear`)
-//      expression = "";
-//      numberString ="";
-//      numb = 0;
-//  expCalc = [];
+// function reset() {
+//     if (isNaN(expression[expression.length-1])){
+//         expression = expression.substring(0, expression.length-1)
+//         expCalc.splice(expCalc.length-1,1)
+//     } else {
+//     numberString= numberString.substring(0, expression.length-1)
+//     expression = expression.substring(0, expression.length-1)
+//     }
+// console.log(expression)
+// console.log(expCalc)
 // }
+function clearScreen() {
+    console.clear()
+    expression = "";
+    numberString ="";
+    numb = 0;
+    expCalc = [];
+}
