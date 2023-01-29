@@ -1,0 +1,10 @@
+.ocean {
+    border : 0.5rem solid black;
+    background-color: aqua;
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+
+.imgFood {
+    width : 200px
+}
