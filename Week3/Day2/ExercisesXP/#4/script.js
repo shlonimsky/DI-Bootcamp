@@ -12,7 +12,7 @@ function calculateVolume(event){
         volumeForm.elements[1].value = volume
         console.log(volume)
     } else {
-        alert(`Error. Enter a number`)
+        alert(`Error.Enter a number`)
     }
 
 }
