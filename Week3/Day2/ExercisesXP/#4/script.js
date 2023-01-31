@@ -8,7 +8,7 @@ function calculateVolume(event){
     event.preventDefault(); 
     const radius = volumeForm.elements[0].value
     if (formValidation(radius)){
-        const volume = 4/3*Math.PI*radius*radius*radius
+        const volume = 4/3*Math.PI*radius**3;
         volumeForm.elements[1].value = volume
         console.log(volume)
     } else {
