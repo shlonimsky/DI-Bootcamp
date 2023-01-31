@@ -1,0 +1,20 @@
+body{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.baner{
+    width: 200px;
+    height: 200px;
+    background: pink;
+    color: red;
+    text-align: center;
+    font-size: 50px;
+}
+#loading{
+    width: 100vw;
+    height: 30px;
+    background-image: linear-gradient(to right, green, 0%, grey);
+}
