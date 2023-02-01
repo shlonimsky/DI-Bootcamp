@@ -1,0 +1,43 @@
+*{
+    padding: 0;
+}
+body{
+    display: flex;
+    flex-direction: row;
+    background: rgb(196, 196, 196);
+}
+.colors{
+    /* width: 50px;
+    height: 50px; */
+    border: 3px solid;
+    border-style: groove;
+}
+#palette{
+    height: 100vh;
+    width: 30vw;
+    display: grid;
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap : 5px;
+    padding: 5px;
+}
+button{
+    grid-column: 1 / span 3;
+    border-radius: 10px;
+    border: 2px solid;
+    border-style:double;
+}
+#canvas{
+    width: 70vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: repeat(24, 1fr);
+    grid-template-columns: repeat(60, 1fr);
+    padding: 5px;
+}
+.canvasUnits{
+    /* width: 1.15vw; */
+    height: auto;
+    border: 1px solid rgb(215, 213, 213);
+    background: white;
+}
