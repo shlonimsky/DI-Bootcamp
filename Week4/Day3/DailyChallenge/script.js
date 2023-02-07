@@ -14,5 +14,19 @@ const inventory = [
     { id: 5, car_make: "Honda", car_model: "Accord", car_year: 1995 },
   ];
   function getCarHonda(carInventory){
-    
+    const honda = carInventory.find(car => car.car_make === "Honda")
+    const sentetce = `This is a ${honda.car_make} ${honda.car_model} from ${honda.car_year}`
+    return sentetce
   }
+  console.log(getCarHonda(inventory))
+
+//   Part II
+
+// Create a function sortCarInventoryByYear(carInventory) that takes a single parameter. 
+// the function should return an inventory that is sorted by car_year, ascending.
+// Hint : Check out this tutorial on the sort method
+function sortCarInventoryByYear(carInventory){
+const sortCars = carInventory.sort((car1,car2) => car1.car_year-car2.car_year)
+return sortCars
+}
+console.log(sortCarInventoryByYear(inventory))
