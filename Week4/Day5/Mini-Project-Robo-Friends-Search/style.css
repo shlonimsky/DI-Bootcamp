@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 body{
     background-image: url(backgr.png);
@@ -11,12 +12,17 @@ header{
     background-color: blueviolet;
     padding: 1vw;
     display: flex;
+    align-items: center;
     gap: 10px;
-    color: white;
-    
+    color: rgb(162, 255, 33);
+    height: 10vh;
+}
+h5{
+    font-size: 1.5em;
 }
 input{
     width: 50vw;
+    font-size: 1.5em;
 }
 #container{
     display: grid;
@@ -28,6 +34,10 @@ input{
     border-radius: 20%;
     background-color: rgba(156, 73, 234, 0.527);
     margin: 5vw;
+    position: relative;
+}
+#container>div:hover{
+    bottom: 3vh;
 }
 #container img{
     border-radius: 50%;
@@ -35,7 +45,8 @@ input{
     width: 80%;
 }
 #container p{
-    background-color: white;
+    color: rgb(162, 255, 33);
+    font-weight: bold;
     margin: 2vw;
 }
 .display-block{
