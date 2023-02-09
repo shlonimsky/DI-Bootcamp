@@ -18,3 +18,5 @@ function anagram (str1,str2){
 }
 
 anagram("School master","The classroom")
+anagram("The Morse Code","Here come dots")
+anagram("Astronomer","Mon starer")
