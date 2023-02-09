@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url(backgr.png);
+    background-color: rgba(234, 228, 228, 0.478);
+}
+header{
+    background-color: blueviolet;
+    padding: 1vw;
+    display: flex;
+    gap: 10px;
+    color: white;
+    
+}
+input{
+    width: 50vw;
+}
+#container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+#container>div{
+    text-align: center;
+    border: solid;
+    border-radius: 20%;
+    background-color: rgba(156, 73, 234, 0.527);
+    margin: 5vw;
+}
+#container img{
+    border-radius: 50%;
+    background-color: rgba(248, 244, 244, 0.474);
+    width: 80%;
+}
+#container p{
+    background-color: white;
+    margin: 2vw;
+}
+.display-block{
+    display: block;
+}
+.not-visible{
+    display: none;
+}
