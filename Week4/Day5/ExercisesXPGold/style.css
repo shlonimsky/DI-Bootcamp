@@ -1,0 +1,15 @@
+*{
+    text-align: center;
+}
+#container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+#container>div{
+    width: 30px;
+    height: 30px;
+    border: solid;
+}
+.not-visible{
+    display: none;
+}

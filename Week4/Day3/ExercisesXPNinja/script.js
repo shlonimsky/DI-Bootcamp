@@ -59,9 +59,28 @@ const users = [{ firstName: 'Bradley', lastName: 'Bouley', role: 'Full Stack Res
 // Change the structure of the users array. The user’s full name should be the key and the user’s role should be the value.
 // Example: { 'Bradley Bouley': 'Full Stack Resident' }
 // Hint: Step one, create an empty object.
-const newUsers = users.map(obj => {
-    let key = obj.firstName+obj.lastName;
-    return { key : obj.role}
+const newUsers = users.map((obj,ind) => {
+  let key={}
+     key[obj.firstName+" "+obj.lastName]=obj.role;
+    return key
 }
 )
 console.log(newUsers)
+
+
+// Exercise 4 : Array To Object
+// Using this array 
+const letters = ['x', 'y', 'z', 'z'];
+// Use a for loop to get this output { x: 1, y: 1, z: 2 };
+let newObj1={};
+for (let letter of letters){
+newObj1[letter]? newObj1[letter]+=1:newObj1[letter]=1
+}
+console.log(newObj1);
+// Use the reduce() method to get this output { x: 1, y: 1, z: 2 };
+// let obj ={}
+let newobj = letters.reduce((acc,leter,ind) => {
+  acc[leter]? acc[leter]+=1 : acc[leter]=1
+return acc
+},{})
+console.log(newobj);
