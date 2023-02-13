@@ -64,6 +64,7 @@ const section = document.getElementById("container")
  }
 
  function addButtonDeleteAll(){
+    // checking if delete all button exist and if not - create it
     if(document.getElementById("deleteAll")===null){
         const btn = document.createElement("button")
         btn.id="deleteAll"
@@ -81,5 +82,7 @@ const section = document.getElementById("container")
     // section.children[btnID].remove()
  }
  function deleteAllGifs(){
-console.log(`in delete all function`);
+do {
+    section.children[0].remove()
+} while(section.children[0]!=null)
  }
