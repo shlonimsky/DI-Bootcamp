@@ -8,6 +8,7 @@
 (function(){
     const searchForm = document.forms.ex2
     searchForm.addEventListener("submit", findTheGif)
+    counter =0;
 }());
 function findTheGif(e){
     e.preventDefault();
@@ -28,19 +29,30 @@ xhr.onload = function(){
     }
  }
 }
+
+const section = document.getElementById("container")
+
  function displayGif(obj){
     const {data:{images:{original:{url}}}} = obj
     console.log(url);
-    const section = document.getElementById("container")
+    // const section = document.getElementById("container")
     const div = document.createElement("div")
     const img = document.createElement("img")
     img.src=url
     const btn = document.createElement("button")
     btn.id=counter
+    btn.addEventListener("click", deleteGif)
     const btnText = document.createTextNode("DELETE")
 
     div.appendChild(img)
     div.appendChild(btn)
     btn.appendChild(btnText)
     section.appendChild(div)
+    counter++;
+ }
+
+ function deleteGif(e){
+    const btnID = document.getElementById(`${e.target.id}`);
+    btnID.parentElement.remove();
+    // section.children[btnID].remove()
  }
