@@ -4,23 +4,31 @@
 // The gif should be appended with a DELETE button next to it. Hint : to find the URL of the gif, look for the sub-object named “images” inside the data you receive from the API.
 // Allow the user to delete a specific gif by clicking the DELETE button.
 // Allow the user to remove all of the GIFs by clicking a DELETE ALL button.
+// const searchForm = document.forms.ex2
 
 (function(){
+    // add event to form
     const searchForm = document.forms.ex2
-    searchForm.addEventListener("submit", findTheGif)
+    searchForm.addEventListener("submit", retrieveFormValue)
+    // creating counter for unique IDs
     counter =0;
 }());
-function findTheGif(e){
+
+
+function retrieveFormValue(e){
+    // finding an input value and calling the function for finding gif
     e.preventDefault();
-const searchValue = e.target[0].value
-console.log(searchValue)
-retriveGifAPI(searchValue)
+    const searchValue = e.target[0].value
+    retriveGifAPI(searchValue)
 }
+
 function retriveGifAPI(string){
+    // sending request to Gif API and retrieving it
 const xhr = new XMLHttpRequest();
 xhr.open("GET", `https://api.giphy.com/v1/gifs/random?q=${string}&rating=g&api_key=hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My`)
 xhr.send();
 xhr.onload = function(){
+    // checking a status of respons and calling function to display the gif
     if (xhr.status !== 200) {
         alert("error,enter another value");
     } else {
@@ -33,9 +41,13 @@ xhr.onload = function(){
 const section = document.getElementById("container")
 
  function displayGif(obj){
+    // creating <img> and <button> and appending it to DOM
+
     const {data:{images:{original:{url}}}} = obj
     console.log(url);
-    // const section = document.getElementById("container")
+
+    addButtonDeleteAll()
+
     const div = document.createElement("div")
     const img = document.createElement("img")
     img.src=url
@@ -51,8 +63,23 @@ const section = document.getElementById("container")
     counter++;
  }
 
+ function addButtonDeleteAll(){
+    if(document.getElementById("deleteAll")===null){
+        const btn = document.createElement("button")
+        btn.id="deleteAll"
+        btn.addEventListener("click", deleteAllGifs)
+        const btnText = document.createTextNode("DELETE ALL")
+        btn.appendChild(btnText)
+        section.appendChild(btn)
+    }
+ }
+
  function deleteGif(e){
+    // removing the gif after clicking on Delete button
     const btnID = document.getElementById(`${e.target.id}`);
     btnID.parentElement.remove();
     // section.children[btnID].remove()
+ }
+ function deleteAllGifs(){
+console.log(`in delete all function`);
  }
