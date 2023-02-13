@@ -24,15 +24,16 @@ function retrieveFormValue(e){
 
 function retriveGifAPI(string){
     // sending request to Gif API and retrieving it
-const xhr = new XMLHttpRequest();
-xhr.open("GET", `https://api.giphy.com/v1/gifs/random?q=${string}&rating=g&api_key=hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My`)
-xhr.send();
-xhr.onload = function(){
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", `https://api.giphy.com/v1/gifs/random?tag=${string}&rating=g&api_key=hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My`)
+    xhr.send();
+    xhr.onload = function(){
     // checking a status of respons and calling function to display the gif
     if (xhr.status !== 200) {
         alert("error,enter another value");
     } else {
         const res = JSON.parse(xhr.response)
+        console.log(res)
         displayGif(res);
     }
  }
@@ -82,6 +83,7 @@ const section = document.getElementById("container")
     // section.children[btnID].remove()
  }
  function deleteAllGifs(){
+    // deleting all child in container
 do {
     section.children[0].remove()
 } while(section.children[0]!=null)
