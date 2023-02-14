@@ -136,7 +136,7 @@ toJs()
 //   Chain the three functions.
 function joinWords(morseTranslation){
     const section = document.getElementById("container")
-    section.textContent = `Translation to Morse:`
+    section.textContent = `Translation to Morse of:`
     morseTranslation.forEach(element => {
         const p = document.createElement("p");
         const pText = document.createTextNode(element);
