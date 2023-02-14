@@ -23,3 +23,26 @@ function fetchURL(urls){
     })
 }
 fetchURL(urls)
+
+// const prom1 = new Promise((resolve,reject) => {
+//     resolve(fetch(urls[0]))
+// })
+// const prom2 = new Promise((resolve,reject) => {
+//     resolve(fetch(urls[1]))
+// })
+// const prom3 = new Promise((resolve,reject) => {
+//     resolve(fetch(urls[2]))
+// })
+// const prom4 = new Promise((resolve,reject) => {
+//     resolve(fetch(urls[3]))
+// })
+// PromiseAll([prom1,prom2,prom3,prom4])
+// .then(responseOne => {
+//     if(responseOne.status !== 200){
+//         throw new Error(`Error,something wrong`)
+//     } else {
+//         return responseOne.json()
+//     }
+// })
+// .then(responseTwo => console.log(responseTwo.result.properties))
+// .catch(err => console.log(err))
