@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            font-size: 120%;
+        }
+        div{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <p>First city</p>
+        <div>
+            <label for="latitude1">latitude</label>
+            <input type="text" name="latitude1" id="latitude1">
+            <label for="longitude1">longitude</label>
+            <input type="text" name="longitude1" id="longitude1">
+        </div>
+        <p>Second city</p>
+        <div>
+            <label for="latitude2">latitude</label>
+            <input type="text" name="latitude2" id="latitude2">
+            <label for="longitude2">longitude</label>
+            <input type="text" name="longitude2" id="longitude2">
+        </div>
+        <button type="submit">search</button>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>
