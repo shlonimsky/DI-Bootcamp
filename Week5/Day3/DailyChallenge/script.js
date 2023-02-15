@@ -119,7 +119,7 @@ toJs()
 //   else return an array with the morse translation of the user’s word.
   function toMorse(morseJS){
     const morseKeys = Object.keys(morseJS);
-    const sentence = prompt(`Enter a word or a sentence`).split("")
+    const sentence = prompt(`Enter a word or a sentence`).toLowerCase().replace(" ","").split("")
     const isNotInMorse = sentence.some(elem => (morseKeys.includes(elem)===false) )
     return new Promise(function(resolve,reject){
         if (isNotInMorse){
