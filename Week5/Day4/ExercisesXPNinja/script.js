@@ -13,7 +13,7 @@ const getData = async function() {
         const [ users, posts, albums ] = await Promise.all(urls.map( async (url) => {
             const a = await fetch(url)
             if (a.status !== 200){
-                throw new Error(`‘ooooooops’`)
+                throw new Error(`ooooooops`)
             } else {
                 return (await a.json()) 
             }

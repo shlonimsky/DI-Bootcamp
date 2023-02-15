@@ -48,15 +48,33 @@ form.addEventListener("submit",getFormData)
 
 function getFormData(e){
     e.preventDefault();
-    const longitCity1 = e.target.longitude1.value
-    const latitCity1 = e.target.latitude1.value
-    const longitCity2 = e.target.longitude2.value
-    const latitCity2 = e.target.latitude2.value
-    console.log(longitCity1,latitCity1,longitCity2,latitCity2)
-    createAPIRequest(latitCity1,longitCity1,latitCity2,longitCity2)
+    const coordinates=[[],[]];
+    const latitCity1 = coordinates[0].push(e.target.latitude1.value)
+    const longitCity1 = coordinates[0].push(e.target.longitude1.value);
+    const latitCity2 = coordinates[1].push(e.target.latitude2.value)
+    const longitCity2 = coordinates[1].push(e.target.longitude2.value)
+    createAPIRequest(coordinates)
 }
-// https://api.sunrise-sunset.org/json?lat=36.7201600&lng=-4.4203400
+// API:  https://api.sunrise-sunset.org/json?lat=36.7201600&lng=-4.4203400
 
-function createAPIRequest(lat1,lng1,lat2,lng2){
-    
+async function createAPIRequest(arr){
+    const urls = arr.map(elem => `https://api.sunrise-sunset.org/json?lat=${elem[0]}&lng=${elem[1]}`)
+    try{
+        const [city1,city2] = await Promise.all(urls.map(async (url) => {
+            const obj = await fetch(url)
+            if (obj.status!==200){
+                throw new Error(`Something went wrong`)
+            } else {
+            return (await obj.json())
+            }
+        }))
+
+        const {results : {sunrise : sunriseCity1}}=city1
+        const {results : {sunrise : sunriseCity2}}=city2
+
+        console.log("sunrise in city1:",sunriseCity1,"sunrise in city2:",sunriseCity2)
+
+    } catch(err){
+        console.log(err)
+    }
 }
