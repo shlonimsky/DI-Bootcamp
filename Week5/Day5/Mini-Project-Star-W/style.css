@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #293c5a;
+    text-align: center;
+}
+body{
+    background-image: url(milky-way.jpg);
+    background-size: cover;
+}
+img{
+    height: 30vh;
+}
+#info{
+    height: 50vh;
+    margin: 0px 20%;
+    border: 10px solid white;
+    border-style: inset;
+    font-size: 250%;
+    background-color: rgb(245 245 245 / 50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+button{
+    background-color: rgb(141 140 149 / 67%);
+    font-size: 150%;
+    padding: 2%;
+    margin-top: 5%;
+    color: white;
+    border: white solid 10px;
+    border-radius: 5%;
+    border-style: outset;
+}
