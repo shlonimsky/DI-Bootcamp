@@ -10,39 +10,47 @@ const h1 = document.querySelector("h1");
 async function mainFunction(){
     try {
         deleteAll()
-    const random = Math.floor(Math.random() * 83) + 1;
-    const resultPeople = await fetch(`https://www.swapi.tech/api/people/${random}`)
-    if (resultPeople.status !== 200){
-        throw new Error (`The character not found`)
-    
-    } else {
-        const people = await resultPeople.json();
-
         const {result : {properties : {
                 name : fullName, 
                 height, 
                 gender,
                 birth_year,
-                homeworld
-            }}} =people
-    
-        const resultHome = await fetch(homeworld);
-        const planet = await resultHome.json();
-        const {result : {properties : {name : planetName}}} = planet
-        console.log(planetName)
-        displayCharacter(fullName,height,gender,birth_year,planetName)
-    }
-    
+                homeworld 
+            }}} = await getPeople();
+        console.log(homeworld)
+        const planetName = await getPlanet(homeworld);
+        displayCharacter(fullName,height,gender,birth_year,planetName);
     } catch (err){
-        console.log(err)
         displayError()
+        console.log(err)
     }
 }
 
 
-// function getPeople(){
 
-// }
+async function getPeople(){
+        const random = Math.floor(Math.random() * 83) + 1;
+        const resultPeople = await fetch(`https://www.swapi.tech/api/people/${random}`)
+        if (resultPeople.status !== 200){
+            throw new Error (`The character not found`)
+        } else {
+            const people = await resultPeople.json();
+            console.log(people)
+            return people
+        }
+}
+
+async function getPlanet(name){
+        const resultHome = await fetch(name);
+        if (resultHome.status !== 200){
+            throw new Error(`The character not found`)
+        } else{
+            const planet = await resultHome.json();
+            const {result : {properties : {name : planetName}}} = planet
+            console.log(planetName)
+            return planetName
+        }
+}
 
 
 
