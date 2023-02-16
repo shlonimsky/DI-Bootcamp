@@ -3,13 +3,16 @@
 
 (function(){
     const form = document.forms[0]
+    const btnSwitch = document.getElementById("switch")
     form.addEventListener("submit", convertCurrencies)
-}())
+    btnSwitch.addEventListener("click", switchTheCurrency)
+}());
+
+const select1 = document.querySelector("#cur1");
+const select2 = document.querySelector("#cur2");
 
 async function getCurrency(){
     try{
-        const select1 = document.querySelector("#cur1")
-        const select2 = document.querySelector("#cur2")
         const response = await fetch("https://v6.exchangerate-api.com/v6/a7973e4e9141df7de98e0c00/codes")
         if (response.status !== 200){
            throw new Error(`ERROR OCCURED`) 
@@ -65,3 +68,16 @@ async function displayResult(res,curr){
     p.textContent = res+" "+curr
 }
   
+function switchTheCurrency(){
+
+    var value1 = select1.options[select1.selectedIndex].value;
+    var value2 = select2.options[select2.selectedIndex].value;
+    console.log(value1);
+    console.log(value2);
+    const  option1= document.querySelector(`#cur1>option[value=${value2}`)
+    option1.selected = true
+    const  option2= document.querySelector(`#cur2>option[value=${value1}`)
+    option2.selected = true
+    const inputValue = document.forms[0].amount.value
+    fetchConverter(value2,value1,inputValue)
+}
