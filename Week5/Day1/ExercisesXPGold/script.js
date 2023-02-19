@@ -1,26 +1,22 @@
-// Exercise 1 : HTML Form #3
-// Create a form like the form provided above. The form should contain three inputs:
-// name,
-// lastname,
-// submit
-// Send the data to another HTML file and display the sent data in the body.
-// console.log(document.querySelector("#container"));
+// // Exercise 1 : HTML Form #3
+// // Create a form like the form provided above. The form should contain three inputs:
+// // name,
+// // lastname,
+// // submit
+// // Send the data to another HTML file and display the sent data in the body.
+// // console.log(document.querySelector("#container"));
 
-(function(){
-    const form = document.forms.myform;
-form.addEventListener("submit", sendData)
-}())
+let url = window.location.href;
+console.log(url);
 
-function sendData(e){
-    // e.preventDefault();
-    const fname = e.target.fname.value;
-    const lname = e.target.lname.value;
-    createElements(fname,lname)
-}
+if (url.indexOf("?") !== -1){
+    url = url.slice(url.indexOf("?")+1);
 
-function createElements(fname,lname){
-    const secondHTML = window.location.href("second.html").querySelector("#container")
-    console.log(secondHTML);
+    const searchParams = new URLSearchParams(url);
+    const fname = searchParams.getAll('fname');
+    const lname = searchParams.getAll('lname')
+
+    const div = document.querySelector("#container");
     const p= document.createElement("p");
     const pText = document.createTextNode(`Hello, ${fname} ${lname}!`)
     p.appendChild(pText);
