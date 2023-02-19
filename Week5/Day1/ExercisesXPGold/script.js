@@ -8,7 +8,6 @@
 
 let url = window.location.href;
 console.log(url);
-
 if (url.indexOf("?") !== -1){
     url = url.slice(url.indexOf("?")+1);
 
