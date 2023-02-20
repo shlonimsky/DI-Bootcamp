@@ -1,15 +1,15 @@
 -- Create a table city_info, with those columns : event_datetime,city,temperature,light,airquality_raw,sound,humidity,dust
 
--- CREATE TABLE city_info (
--- event_datetime timestamp NOT NULL, 
--- city VARCHAR(50) NOT NULL, 
--- temperature decimal NOT NULL, 
--- light decimal NOT NULL, 
--- airquality_raw decimal NOT NULL, 
--- sound decimal NOT NULL, 
--- humidity decimal NOT NULL, 
--- dust decimal NOT NULL
--- )
+CREATE TABLE city_info (
+event_datetime timestamp NOT NULL, 
+city VARCHAR(50) NOT NULL, 
+temperature decimal NOT NULL, 
+light decimal NOT NULL, 
+airquality_raw decimal NOT NULL, 
+sound decimal NOT NULL, 
+humidity decimal NOT NULL, 
+dust decimal NOT NULL
+)
 -- echo$TMPDIR
 -- 3. Import the csv file into the table
 COPY city_info (event_datetime,city,temperature,light,airquality_raw,sound,humidity,dust)
@@ -28,7 +28,7 @@ Select city, event_datetime AS day,sound FROM city_info ORDER BY sound DESC LIMI
 -- 5. Which city was the least noisy (show the name of the city, the date and the noise index)? - Don't use the MIN function
 SELECT city, event_datetime AS day,sound FROM city_info ORDER BY sound ASC LIMIT 1;
 -- 6. Show the dust index of San Francisco on the 26/03/2015 after 20:00.
-SELECT dust FROM city_info WHERE event_datetime::timestamp::date = '2015-03-26 20:00' AND city = 'San Francisco';
+SELECT dust,event_datetime FROM city_info WHERE event_datetime='2015-03-26 20:00' AND city = 'San Francisco';
 
 -- 7. When (ie. days and hours) is the humidity index less that 40 or more than 60 in Geneva?
 SELECT EXTRACT(DAY FROM event_datetime) AS Day, EXTRACT(HOUR FROM event_datetime) AS Hour FROM city_info WHERE city='Geneva' AND humidity <=40 OR humidity >=60 ;
