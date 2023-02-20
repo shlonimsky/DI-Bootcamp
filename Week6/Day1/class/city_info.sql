@@ -40,5 +40,5 @@ SELECT to_char(event_datetime, 'Day') AS Day, light FROM city_info ORDER BY ligh
 SELECT DISTINCT city FROM city_info WHERE city ILIKE 's%';
 -- 10. Add to the table, todays information in Israel - of this very hour. 
 INSERT INTO city_info (event_datetime, city, temperature, light,airquality_raw, sound, humidity, dust)
-VALUES ('2023-02-19', 'Tel-Aviv', 18, 3500, 19, 1700, 59, 1000);
+VALUES (NOW(), 'Tel-Aviv', 18, 3500, 19, 1700, 59, 1000);
 SELECT*FROM city_info WHERE city='Tel-Aviv'
