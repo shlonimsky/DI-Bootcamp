@@ -43,3 +43,19 @@ INSERT INTO city_info (event_datetime, city, temperature, light,airquality_raw, 
 VALUES (NOW(), 'Tel-Aviv', 18, 3500, 19, 1700, 59, 1000);
 SELECT*FROM city_info WHERE city='Tel-Aviv'
 
+
+-- Week6 Day2 Exercise 1
+SELECT*FROM city_info
+-- Use aggregate functions
+-- 1. What is the average dust index in the city of Boston between 01/03/2015 and 05/03/2015?
+SELECT AVG(dust) AS dust from city_info
+Where DATE(event_datetime) BETWEEN '2015-03-01' AND '2015-03-05' AND city='Boston'
+-- 2. How many rows does the table have about the city "San Francisco" ?
+SELECT COUNT(*) FROM city_info
+Where city='San Francisco'
+-- 3. How many rows per city does the table have ?
+select city, count(*) FROM city_info
+GROUP BY city
+-- 4. Where and when (only hour) it's the noisiest in the world?
+SELECT city,event_datetime:: time AS  hour,sound FROM city_info
+WHERE sound = (SELECT max(sound) FROM city_info)
