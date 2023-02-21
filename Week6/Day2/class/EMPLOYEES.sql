@@ -45,13 +45,13 @@ EMPFNAME ASC,
 LOCATION ASC;
 
 -- Display EMPFNAME and "TOTAL SALARY" for each employee (commission and salary)
-SELECT EMPFNAME, SALARY+COMMISSION AS TOTAL_SALARY FROM EMPLOYEE
+SELECT EmpFName,EmpLName, SALARY+COMMISSION AS TOTAL_SALARY FROM EMPLOYEE
 
 -- Display MAX SALARY from the EMPLOYEE table.
 SELECT MAX(SALARY) FROM EMPLOYEE
 
 -- Find the avg salary of the software engineers
-SELECT AVG(SALARY) FROM EMPLOYEE
+SELECT ROUND(AVG(SALARY),2) FROM EMPLOYEE
 WHERE JOB ILIKE 'software engineer'
 
 -- Bonus: Which join should we use to display the employee 9777 even if he has no deptcode?
