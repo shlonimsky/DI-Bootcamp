@@ -41,7 +41,7 @@ SELECT first_name,isLoggedIn FROM customer
 LEFT JOIN customer_profile ON customer_profile.customer_id=customer.customer_id
 -- The number of customers that are not LoggedIn
 SELECT COUNT(*) FROM customer
-LEFT JOIN customer_profile ON customer_profile.customer_id=customer.customer_id
+-- LEFT JOIN customer_profile ON customer_profile.customer_id=customer.customer_id
 WHERE isLoggedIn=FALSE;
 
 -- Part II:
