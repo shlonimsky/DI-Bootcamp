@@ -35,7 +35,7 @@ RETURNING *;
 -- The first_name of the LoggedIn customers
 SELECT first_name FROM customer
 JOIN customer_profile ON customer_profile.customer_id=customer.customer_id
-WHERE isLoggedIn=TRUE;
+WHERE isLoggedIn;
 -- All the customers first_name and isLoggedIn columns - even the customers those who don’t have a profile.
 SELECT first_name,isLoggedIn FROM customer
 LEFT JOIN customer_profile ON customer_profile.customer_id=customer.customer_id
