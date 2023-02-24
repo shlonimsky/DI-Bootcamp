@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .beRed{
+            color: red;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+        <button type="submit" >submit</button>
+        <section id="container"></section>
+        <section id="apiContainer">
+            <button id="callApi">Click Here</button>
+        </section>
+        <form name="ex29">
+            <input type="text" id="fname" name="fname" placeholder="First Name" required>
+            <input type="text" id="lname" name="lname" placeholder="Last Name" required>
+            <input type="email" id="email" name="email" placeholder="email" required>
+            <input type="password" id="password" name="password" placeholder="password" required>
+            <button type="submit" >Sent</button>
+        </form>
+        <section id="ex29Container"></section>
+    <script src="script.js"></script>
+</body>
+</html>
