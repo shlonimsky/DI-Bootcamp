@@ -1,0 +1,19 @@
+.not_visible{
+    display: none;
+}
+.grey{
+    background-color: gray;
+}
+.green{
+    background-color: green;
+}
+.red{
+    background-color: red;
+}
+div{
+    text-align: center;
+    border: solid;
+    border-radius: 20%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}

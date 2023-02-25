@@ -8,15 +8,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <nav>
+        <a href="toDoList.html">Your ToDo List</a>
+    </nav>
     <form action="toDoList.html">
         <label for="name">Name</label>
-        <input type="text" id="name">
+        <input type="text" id="name" name="name" value="Task1" required>
         <label for="description">Description</label>
-        <textarea id="description" cols="20" rows="3"></textarea>
+        <textarea id="description" name="discription" cols="20" rows="3">discription</textarea>
         <label for="start_date">Start date and time</label>
-        <input type="datetime-local" id="start_date">
+        <input type="datetime-local" id="start_date" name="start_date" value="2023-02-25 12:00" required>
         <label for="end_date">End date and time</label>
-        <input type="datetime-local" id="end_date">
+        <input type="datetime-local" id="end_date" name="end_date" value="2023-02-26 12:00" required>
         <button type="submit">Add the task</button>
     </form>
     <script src="script.js"></script>
