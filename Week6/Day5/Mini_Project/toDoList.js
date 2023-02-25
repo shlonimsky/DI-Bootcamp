@@ -27,11 +27,11 @@ function appendTasks(i,{name,discription,start_date,end_date,isCompleted}){
     pName.addEventListener("click", showTask)
 
     const pDiscription = document.createElement("p")
-    pDiscription.classList.add("not_visible")
+    pDiscription.classList.add("not_visible","two_columns")
     const pStartDate = document.createElement("p")
-    pStartDate.classList.add("not_visible")
+    pStartDate.classList.add("not_visible","two_columns")
     const pLeftDays = document.createElement("p")
-    pLeftDays.classList.add("not_visible")
+    pLeftDays.classList.add("not_visible","two_columns")
 
     const isDone = document.createElement ("input")
     isDone.classList.add("not_visible")
@@ -55,8 +55,8 @@ function appendTasks(i,{name,discription,start_date,end_date,isCompleted}){
 
     div.appendChild(pName)
     div.appendChild(button)
-    div.appendChild(pLeftDays)
     div.appendChild(pDiscription)
+    div.appendChild(pLeftDays)
     div.appendChild(pStartDate)
     div.appendChild(isDone)
     div.appendChild(isDoneLabel)
@@ -84,7 +84,7 @@ function amountOfDaysLeft(date){
 
 function showTask(e){
     const div = e.currentTarget.parentNode
-    for (let i=2; i<=5; i++){
+    for (let i=2; i<=6; i++){
         div.children[i].classList.toggle("not_visible")
     }
 }
