@@ -1,7 +1,42 @@
+*{
+    margin: 0;
+}
+body{
+    background-color: rgb(184, 184, 189);
+}
+nav{
+    background-color: rgb(17, 26, 84);
+    text-align: center;
+
+}
+a{
+    color: white;
+
+    font-size: 200%;
+    text-decoration: none;
+    padding: 5%;
+}
+a:hover, button:hover{
+    color: rgb(100, 164, 241);
+}
 .not_visible{
     display: none;
 }
-
+form{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin: 5% 8%;
+    font-size: 200%;
+    text-align: center;
+    border: solid;
+    padding: 50px;
+    background-color: rgb(17, 26, 84);
+}
+form>input,textarea,form>button{
+    font-size: 120%;
+    margin-bottom: 10px;
+}
 
 div{
     text-align: center;
@@ -14,12 +49,14 @@ div{
     color: white;
     font-size: 1.5em;
 }
-button{
+div>button{
     width: fit-content;
     height: fit-content;
-    font-size: 150%;
-    position: absolute;
-    right: 10%;
+    font-size: 100%;
+    position: relative;
+    left: 80%;
+    top: -9%;
+    color: white;
     margin-top: 2%;
     background-color: #eeeeee37;
     border-radius: 20px;
