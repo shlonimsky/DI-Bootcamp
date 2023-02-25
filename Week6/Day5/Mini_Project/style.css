@@ -1,19 +1,39 @@
 .not_visible{
     display: none;
 }
-.grey{
-    background-color: gray;
-}
-.green{
-    background-color: green;
-}
-.red{
-    background-color: red;
-}
+
+
 div{
     text-align: center;
-    border: solid;
-    border-radius: 20%;
+    border: solid 3px;
+    border-style: double;
+    border-radius: 20px;
     display: grid;
     grid-template-columns: repeat(2,1fr);
+    margin: 5%;
+    color: white;
+    font-size: 1.5em;
+}
+button{
+    width: fit-content;
+    height: fit-content;
+    font-size: 150%;
+    position: absolute;
+    right: 10%;
+    margin-top: 2%;
+    background-color: #eeeeee37;
+    border-radius: 20px;
+}
+.pointer{
+    cursor: pointer;
+}
+
+.green{
+    background-color: #56966d;
+}
+.red{
+    background-color: #e35757;
+}
+.grey{
+    background-color: gray;
 }

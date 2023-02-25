@@ -1,13 +1,19 @@
-(() => {
+function getAllTasks(){
     const allTasks = JSON.parse(localStorage.getItem("tasks"))
-    for (const task of allTasks){
-        appendTasks(task)
-    }
-})()
+    for (let i=0; i<allTasks.length; i++){
+        appendTasks(i,allTasks[i])
 
-function appendTasks({name,discription,start_date,end_date,isCompleted}){
+    }
+  
+}
+getAllTasks()
+
+
+function appendTasks(i,{name,discription,start_date,end_date,isCompleted}){
+    console.log(i)
     const container = document.getElementById("container")
     const div = document.createElement("div")
+    div.id=i
 
     if ( checkIfExpire(end_date) ){
         div.classList.add("red")
@@ -17,6 +23,7 @@ function appendTasks({name,discription,start_date,end_date,isCompleted}){
 
     // div.addEventListener("click", showTask)
     const pName = document.createElement("p");
+    pName.classList.add("pointer")
     pName.addEventListener("click", showTask)
 
     const pDiscription = document.createElement("p")
@@ -24,13 +31,19 @@ function appendTasks({name,discription,start_date,end_date,isCompleted}){
     const pStartDate = document.createElement("p")
     pStartDate.classList.add("not_visible")
     const pLeftDays = document.createElement("p")
+    pLeftDays.classList.add("not_visible")
+
     const isDone = document.createElement ("input")
     isDone.classList.add("not_visible")
-    isDone.addEventListener("click", changeTheStatus())
+    isDone.addEventListener("change", changeTheStatus)
     isDone.type = "checkbox"
     isDone.checked = isCompleted
     const isDoneLabel = document.createElement("label")
     isDoneLabel.classList.add("not_visible")
+    const button = document.createElement("button")
+    button.textContent = "X"
+    button.classList.add("pointer")
+    button.addEventListener("click", deleteATask)
 
 
     pName.textContent = name
@@ -41,6 +54,7 @@ function appendTasks({name,discription,start_date,end_date,isCompleted}){
 
 
     div.appendChild(pName)
+    div.appendChild(button)
     div.appendChild(pLeftDays)
     div.appendChild(pDiscription)
     div.appendChild(pStartDate)
@@ -75,6 +89,29 @@ function showTask(e){
     }
 }
 function changeTheStatus(e){
-    const a = e;
-    console.log(e)
+    const id = e.target.parentElement.id;
+    document.getElementById(id).classList.toggle("grey")
+    console.log(document.getElementById(id))
+    const allTasks = JSON.parse(localStorage.getItem("tasks"))
+    console.log(allTasks)
+    // const value = allTasks[id]["isCompleted"]
+    // console.log(value)
+    allTasks[id]["isCompleted"] = !allTasks[id]["isCompleted"]
+    localStorage.setItem("tasks",JSON.stringify(allTasks))
+
+}
+function deleteATask(e){
+    const userConfirm = confirm(`Are you sure you want delete this task?`)
+    const id = e.target.parentElement.id;
+    if (userConfirm){
+        const allTasks = JSON.parse(localStorage.getItem("tasks"))
+        allTasks.splice(id,1)
+        localStorage.setItem("tasks",JSON.stringify(allTasks))
+        const container = document.getElementById("container")
+       do {
+            container.removeChild(container.firstChild);
+          } while  (container.hasChildNodes())
+        getAllTasks()
+    }
+    
 }
