@@ -51,10 +51,14 @@ const howLongYouLive = (date="1994-03-29") =>{
 // (Example: the next holiday is in 30 days and 12:03:45 hours)
 
 // Bonus : Try to find a node module to get the date of the holidays instead of hardcoding it.
-const  leftToHoliday = (date="2023-04-09",holidayName="Easter") =>{
+const  leftToHoliday = (holidayName="Easter") =>{
+    const Holidays = require('date-holidays')
+    const hd = new Holidays('US')
+    const holiday = hd.getHolidays(2023).filter(obj => obj.name==holidayName)
+
     const now = new Date();
-    const holiday = new Date(date)
-    const miliseconds = (holiday - now)/1000
+    const date = new Date(holiday[0]["start"])
+    const miliseconds = (date - now)/1000
     const seconds = Math.floor(miliseconds % 60);
     const minutes = Math.floor(miliseconds/60 % 60)
     const hours = Math.floor(miliseconds/60/60 % 24)
