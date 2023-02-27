@@ -1,0 +1,1 @@
+const clicking = () => alert('Hello from JS')

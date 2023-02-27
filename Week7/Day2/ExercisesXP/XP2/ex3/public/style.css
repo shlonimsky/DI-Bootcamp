@@ -1,0 +1,13 @@
+article{
+    border: blue 3px dotted;
+    background-color: rgb(247, 247, 132);
+    text-align: center;
+}
+h1,h3{
+    color: darkblue;
+}
+button{
+    padding: 5px;
+    background-color: darkblue;
+    color: aliceblue;
+}
