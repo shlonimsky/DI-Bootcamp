@@ -5,10 +5,7 @@
 // Hint : use JSON.
 // 3. Your server should run on http://localhost:8080/
 const http = require('http')
-const user = {
-    firstname: 'John',
-    lastname: 'Doe'
-}
+const {user} = require('./db')
 const server = http.createServer((req,res) => {
     console.log('listening')
     res.end(JSON.stringify(user))
