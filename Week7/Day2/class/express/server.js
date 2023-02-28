@@ -1,5 +1,9 @@
 const express = require("express")
 const {products} = require("./database/products.js");
+
+
+
+
 const cors = require('cors')
 const app =express();
 app.use(cors())
@@ -10,8 +14,8 @@ app.use(express.json())
 app.use('/',express.static(__dirname + '/fetching'))
 
 //static page is a pegu
-app.listen(5000, () =>{
-    console.log(`listening`)
+app.listen(process.env.PORT, () =>{
+    console.log(`listening port ${process.env.PORT}`)
 })
 // app.get("/api",(req,res) => {
 //     res.send(`<h2> Hello </h2>`);
