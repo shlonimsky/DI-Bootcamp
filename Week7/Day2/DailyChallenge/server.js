@@ -36,6 +36,8 @@ app.use(express.urlencoded({extended:true}))
 app.use(express.json())
 
 app.post('/formData', (req,res) => {
+    // res.send(req.body)
+
         const newMessage = {
             email : req.body.email,
             message : req.body.message

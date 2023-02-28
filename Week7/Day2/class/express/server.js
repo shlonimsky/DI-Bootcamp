@@ -57,9 +57,32 @@ app.post("/api/products", (req,res) => {
     res.sendStatus(200);
 })
 
+//PUT METHOD
+app.put('/api/products/:id', (req,res) => {
+    const id = req.params.id;
+    const index = products.findIndex(item => item.id == id);
+    if (index === -1){
+        return res.status(400).json({msg:`Product not found`})
+    }
+    const updateProduct = {
+        id : products[index].id,
+        name : req.body.name,
+        price : req.body.price
+    }
+    products[index] = updateProduct;
+    res.status(200).json(products)
+})
 
-
-
+//DELETE
+app.delete('/api/products/:id',(req,res) => {
+    const id = req.params.id;
+    const index = products.findIndex(item => item.id == id);
+    if (index === -1){
+        return res.status(400).json({msg:`Product not found`})
+    }
+   products.splice(index,1)
+    res.status(200).json(products)
+})
 
 
 
