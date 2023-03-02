@@ -31,6 +31,7 @@ async function sendData (e) {
         body: JSON.stringify(user)
     })
     const result = await response.json();
+    console.log(result)
     appendToBody(result)
 }
 function appendToBody(mess){

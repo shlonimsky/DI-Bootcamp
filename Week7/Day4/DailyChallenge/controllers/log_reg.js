@@ -7,7 +7,9 @@ const sendRequestLogin = (req,res) => {
 }
 
 const sendRequestRegister = (req,res) => {
-    res.status(200).json(checkRegister(eq.body))
+    // res.json('ok')
+    console.log("req",req.body)
+    res.json(checkRegister(req.body))
 }
 
 module.exports = {
