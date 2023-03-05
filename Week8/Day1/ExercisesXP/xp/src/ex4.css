@@ -1,7 +1,11 @@
-p{
-    background-color: pink;
-    border: yellow solid 3px;
-}
+
 img{
     width: 100px;
 }
+.para {
+    background-color: #282c34;
+    color: white;
+    padding: 40px;
+    font-family: Arial;
+    text-align: center;
+  }

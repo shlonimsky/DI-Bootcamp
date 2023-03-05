@@ -27,7 +27,7 @@ const Exercise4 =() => {
 
             <h1 style={{...style_header}}>This is an h1 Tag</h1>
 
-            <p>This is a paragraph</p>
+            <p className='para'>This is a paragraph</p>
             <a href="https://en.wikipedia.org/wiki/React_(JavaScript_library)"> This is a link to Wiki</a>
             <form>This is a form with input
                 <input type="text"/>Hi, I'm an input
