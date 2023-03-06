@@ -10,7 +10,7 @@ const CarouselDaily = () => {
         return (
             <Carousel className='Carousel'>
                 <div>
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRd-XUOhzR6pw3CEVCRinpLq2xbvYG0hzsHzg&usqp=CAU" />
+                    <img src="https://www.atptour.com/en/tournaments/kyiv/9558/-/media/images/atp-tournaments/tournament-images/kyiv-2021-venue.jpg" />
                     <p className="legend">Kyiv</p>
                 </div>
                 <div>
