@@ -1,0 +1,15 @@
+#root{
+    /* width: 50; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn{
+    display: flex;
+    justify-content: space-between;
+    border: solid;
+    cursor: pointer;
+    margin: 5px;
+    padding: 5%;
+    background-color: antiquewhite;
+}
