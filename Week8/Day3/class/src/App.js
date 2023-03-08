@@ -32,7 +32,8 @@ showUsers =() => {
 }
 
 findRobot =(e) => {
-  this.setState({search:e.target.value.toLowerCase()})
+  this.setState({search:e.target.value.toLowerCase()},() => console.log(this.state.search)) 
+  //setState is async, so to see the value need to use caalvack function
   // this.state.color.users_arr.find(user => user.name)
 }
 render(){
