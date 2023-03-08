@@ -5,9 +5,9 @@ class ErrorBoundary extends React.Component{
     constructor(props){
         super()
         this.state={
-            error : null
-,
-errorInfo:null        }
+            error : null,
+            errorInfo:null        
+        }
     }
 
     componentDidCatch(error,errorInfo){
