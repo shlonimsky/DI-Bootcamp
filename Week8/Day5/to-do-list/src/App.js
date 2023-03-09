@@ -42,7 +42,7 @@ class App extends React.Component {
         <h1>TO DO LIST</h1>
         <div>
           <input onKeyUp={(e) => this.getData(e)}/>
-          <div>
+          <div className='container'>
             {this.state.tasks.length>0 ? (
             this.state.tasks.map(el => (
                     <p onClick={() => this.deleteTask(el)} key={el.id}>{el.task}</p>
