@@ -8,12 +8,15 @@
 // When the component is mounting, it will be rendered with the favorite color “red”.
 
 import React,{Component} from 'react'
+import Child from './Child'
 
 export default class Colour extends Component{
     constructor(){
         super()
         this.state ={
-            favoriteColour : "red"
+            favoriteColour : "red",
+            message : "",
+            show : true
         }
     }
     changeToBlue =() => {
@@ -21,8 +24,6 @@ export default class Colour extends Component{
     }
 
     componentDidMount = () => {
-        console.log("in mount")
-
         setTimeout(() => this.setState({favoriteColour : "yellow"}),5000)
     }
     
@@ -31,27 +32,31 @@ export default class Colour extends Component{
     }
 
     componentDidUpdate(prevProps,prevState,snapShot){
-        console.log("in update")
-        return(
-            <div>My Favorite color is {this.state.favoriteColour} (didUpdate func)</div>
-        )
+       if (snapShot){
+        this.setState({message: `Before the update the favoutite coloure was ${prevState.favoriteColour}. After update it is ${this.state.favoriteColour}`})
+       }
+        
     }
     getSnapshotBeforeUpdate(prevProps,prevState){
-        console.log("in snapshot")
-        console.log(prevState)
-
-        if (prevState.favoriteColour !== this.state.favoriteColour)
-        return prevState
+        if (prevState.favoriteColour !== this.state.favoriteColour) return true
         else return null
     }
+    delete =() => {
+        console.log('in delete')
+        this.setState({show : !this.state.show})
+    }
+   
 
     render (){
-        console.log("in render")
-
         return (
             <div>
+                <p>Exercise 2 : Lifecycle #1</p>
                 <h1> My favourite colour is {this.state.favoriteColour}</h1>
                 <button onClick = {this.changeToBlue}>Change to blue</button>
+                <p>{this.state.message}</p>
+                <p>Exercise 3 : Lifecycle #2</p>
+                 <div>{this.state.show? (<Child />) : ""}</div>
+                 <button onClick={this.delete}>delete header</button>
             </div>
         )
     }
