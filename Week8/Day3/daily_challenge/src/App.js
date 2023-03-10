@@ -40,17 +40,6 @@ class App extends React.Component{
       <div className="container" onChange={(e) => this.handleChange(e)}>
         <Form />
         <Data data={this.state}/>
-        {/* <div className='data'>
-        <h1>Entered information:</h1>
-        <h4>Your name: {this.state.firstName} {this.state.lastName}</h4>
-        <h4>Your age: {this.state.age}</h4>
-        <h4>Your gender: {this.state.gender}</h4>
-        <h4>Your destination: {this.state.destination}</h4>
-        <h4>Your dietary restrictions:</h4>
-        <p>Nuts free: {this.state.nutsFree? "Yes" : "No"} </p>
-        <p>Lactose free : {this.state.lactoseFree? "Yes" : "No"} </p>
-        <p>Vegan meal  : {this.state.vegan? "Yes" : "No"} </p>
-        </div> */}
       </div>
     );
   }
