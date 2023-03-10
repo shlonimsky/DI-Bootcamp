@@ -26,9 +26,9 @@ function App() {
   return (
     <div className="App">
       {celebrities.map((person,i) => (
-        <>
+        <div key={i}>
         <BootstrapCard celebrities={person} ind ={i}/>
-        </>
+        </div>
       ))}
     </div>
   )
