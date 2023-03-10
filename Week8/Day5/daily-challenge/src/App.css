@@ -1,0 +1,44 @@
+nav{
+  padding-bottom: 2%;
+  background: linear-gradient(to left top, rgb(177, 9, 255), rgb(254, 58, 58)) center center fixed;
+
+}
+nav>div{
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+}
+.flex_row{
+  display: flex;
+  justify-content: space-between;
+  width: 20vw;
+  padding-right: 5%;
+}
+#container{
+  height: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-content: flex-start;
+  overflow: auto;
+}
+.card{
+  background: #fff;
+    border: 5px solid #fff;
+    border-radius: 2px;
+    margin: 40px 20px;
+    position: relative;
+    width: 250px;
+    box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+    transition: box-shadow .1s ease-in-out;
+    text-align: center;
+}
+.card:hover {
+  box-shadow: 0 12px 24px #999, 0 12px 24px #999;
+  cursor: pointer;
+}
+img{
+  width: 80%;
+  overflow: hidden;
+  overflow: clip;
+}
