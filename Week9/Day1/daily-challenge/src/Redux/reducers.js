@@ -1,5 +1,5 @@
 import { combineReducers } from "redux"
-
+import {FIND_MOVIE} from './actions'
 // const initState = () => {
 //     movies : [
 //     {title: 'Spider-Man: Homecoming', releaseDate: '05-07-2017', rating: 7.4,},
@@ -20,7 +20,7 @@ return [
 }
 const selectedMovieReducer = (state=null,action={}) => {
     switch (action.type){
-        case  'FIND' : return action.payload 
+        case  FIND_MOVIE : return action.payload 
         default : return state
     }
 }

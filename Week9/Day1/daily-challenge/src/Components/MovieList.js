@@ -25,7 +25,7 @@ const mapStateToProps = (state) => {
 }
 // const mapDispatchToProps =(dispatch) => {
 //     console.log(dispatch)
-//     return { selectMovie : () => dispatch(selectMovie())}
+//     return { selectMovie : (obj) => dispatch(selectMovie(obj))}
 // }
 
 export default connect(mapStateToProps)(MovieList)

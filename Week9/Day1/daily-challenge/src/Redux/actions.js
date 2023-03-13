@@ -1,6 +1,7 @@
+export const FIND_MOVIE = 'FIND'
 export const selectMovie = (movie) => {
     return {
-        type : 'FIND',
+        type : FIND_MOVIE,
         payload : movie
     }
 }
