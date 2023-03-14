@@ -11,7 +11,7 @@ export const reducer = (state=initState,action={}) => {
 
     switch (action.type) {
         case 'SEARCH' : return {...state, search : action.payload.toLowerCase()}
-        default : return {...state, robots : state.robots.filter(rob => rob.name.toLowerCase().includes(state.search))}
+        default : return {...state} //, robots : state.robots.filter(rob => rob.name.toLowerCase().includes(state.search))}
     }
     // if (action.type==='SEARCH')  return {...state, robots : filtered, search : action.payload.toLowerCase()}
     // else return{...state, robots : filtered}
