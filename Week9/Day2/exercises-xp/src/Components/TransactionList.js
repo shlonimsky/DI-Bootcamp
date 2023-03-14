@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import {UpdateIndex,Delete} from '../Redux/action'
 
 const TransactionList = (props) => {
-    // console.log(props.allData)
+    console.log(props.allData)
     return (
         <div>
             <h2>My Transactions</h2>
