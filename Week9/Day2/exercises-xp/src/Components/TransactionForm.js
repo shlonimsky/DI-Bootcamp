@@ -28,7 +28,7 @@ class TransactionForm extends React.Component{
     }
 
     componentDidUpdate(prevProps,prevState){
-        if (prevProps.index !== this.props.index) {
+        if (prevProps.index !== this.props.index && this.props.index != -1) {
         const dataToUpdate = [...this.props.allData]
         // console.log(dataToUpdate[this.props.index])
         this.setState(dataToUpdate[this.props.index])
