@@ -5,7 +5,7 @@ const Card = (props) => {
         <div>
             {
                 props.rob.map(pers => {
-                    if ( pers.name.toLowerCase().includes(props.text)) {
+                    if ( pers.name.toLowerCase().includes(props.text) || pers.username.toLowerCase().includes(props.text)) {
                         return (
                             <div key={pers.id} className="bg-light-green dib br3 ma3 grow bw2  shadow-5"> 
                             <img src={`https://robohash.org/set_set4/1${pers.username}}?size=300x300`} alt='robo'/>
