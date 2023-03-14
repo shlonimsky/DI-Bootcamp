@@ -4,7 +4,7 @@ import {UpdateIndex,Delete} from '../Redux/action'
 const TransactionList = (props) => {
     console.log(props.allData)
     return (
-        <div>
+        <div id="container">
             <h2>My Transactions</h2>
             <table>
                 <tbody>
