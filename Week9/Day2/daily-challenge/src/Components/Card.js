@@ -18,6 +18,7 @@ const Card = (props) => {
 }
 
 const mapStateToProps = (state) => {
+    console.log(state.search)
     return{
         rob : state.robots
     }

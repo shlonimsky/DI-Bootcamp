@@ -29,7 +29,6 @@ class TransactionForm extends React.Component{
 
     componentDidUpdate(prevProps,prevState){
         if (prevProps.index !== this.props.index) {
-            console.log("NEED TO CHENGE FIELDS")
         const dataToUpdate = [...this.props.allData]
         // console.log(dataToUpdate[this.props.index])
         this.setState(dataToUpdate[this.props.index])
@@ -43,11 +42,11 @@ class TransactionForm extends React.Component{
         const {accountNumber,fsc,name,amount} = this.state
         // console.log("after setState",this.state)
         return(
-            <form onChange={this.handleInputChange} onSubmit={(e) => this.handleSubmit(e)}>
-                <input type="text" name='accountNumber' value={accountNumber} placeholder='Account number' /> 
-                <input type="text" name='fsc' value={fsc} placeholder='FSC' /> 
-                <input type="text" name='name' value={name} placeholder='A/C Holder Name' /> 
-                <input type="text" name='amount' value={amount} placeholder='amount' /> 
+            <form  onSubmit={(e) => this.handleSubmit(e)}>
+                <input onChange={this.handleInputChange} type="text" name='accountNumber' value={accountNumber} placeholder='Account number' /> 
+                <input onChange={this.handleInputChange} type="text" name='fsc' value={fsc} placeholder='FSC' /> 
+                <input onChange={this.handleInputChange} type="text" name='name' value={name} placeholder='A/C Holder Name' /> 
+                <input onChange={this.handleInputChange} type="text" name='amount' value={amount} placeholder='amount' /> 
                 <button type='submit'>Submit</button>
             </form>
         )
