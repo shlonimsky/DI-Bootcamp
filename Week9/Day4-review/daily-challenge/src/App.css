@@ -1,0 +1,16 @@
+article{
+border: solid;
+background-color: rgb(108, 197, 245);
+width: 50vw;
+}
+.App{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+    background-color: bisque;
+}
+i{
+    color: yellow;
+}
