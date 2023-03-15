@@ -2,20 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
 import {createStore,applyMiddleware} from 'redux'
-import {Provider} from 'react-redux'
-import {reducer} from './Redux/reducer'
-// import logger from 'redux-logger'
-import { my_logger } from './Redux/logger';
+import { Provider } from 'react-redux';
 import thunk from 'redux-thunk'
-const store = createStore(reducer,applyMiddleware(my_logger,thunk))
-
-
+import {reducer} from './Redux/reducer'
+import {logger} from './Redux/logger'
+const store = createStore(reducer,applyMiddleware(logger))
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Provider  store = {store}>
+    <Provider store={store}>
     <App />
     </Provider>
   </React.StrictMode>
