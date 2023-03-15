@@ -1,34 +1,43 @@
-import {connect} from 'react-redux'
-import React from 'react'
-import { getRobots } from '../Redux/actions'
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { getRobots, searchFilter } from "../Redux/actions";
 
-const Cards = (props) => {
+const Robots = (props) => {
+    const robots = useSelector(state => state.robots);
+    const text = useSelector(state => state.search)
+    // const robots = useSelector(state => state.robots);
+    const dispatch = useDispatch();
 
-    // const robotsAPI1 = props.getRob()
-    // const robotsAPI2 = props.robs
+    useEffect(() => {
+        dispatch(getRobots());
+    }, [])
 
-    // console.log("robotsAPI",robotsAPI1)
-    const Rob = props.getRob()
-    // console.log(props.robs)
+    const handleChange = (e) => dispatch(searchFilter(e.target.value))
+
+
     return (
-        <>Hell
-        {Rob.map(item => { console.log(item)
-        }
-        )}
+        <>
+            <nav>
+                <h1>ROBOCATS</h1>
+                <input onChange={(e) => handleChange(e)} type="text" placeholder="Search Robots" className="br4 b--light-purple bg--lightest-blue pa2"/>
+            </nav>
+            <div>
+            {
+                robots.map((robot, i) => {
+                    if (robot.name.toLowerCase().includes(text)){
+                        return (
+                            <div key={i} className="bg-light-green dib br3 ma3 grow bw2  shadow-5">
+                                <img src={`https://robohash.org/set_set4/1${robot.name}}?size=300x300`} alt='robot' />
+                                <h4>{robot.name}</h4>
+                                <h4>{robot.email}</h4>
+                            </div>
+                        )
+                    }
+                })
+            }
+            </div>
         </>
-        
     )
 }
 
-const mapStateToProps =(state) => {
-    return {
-        robs : state.robots
-    }
-}
-const mapDispatchToProps = (dispatch) => {
-    return {
-        getRob : () => dispatch(getRobots())
-    }
-}
-
-export default connect(mapStateToProps,mapDispatchToProps)(Cards)
+export default Robots

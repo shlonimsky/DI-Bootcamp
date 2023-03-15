@@ -1,14 +1,20 @@
+import {SEARCH,GET,LOADING} from './constants'
 const initState = {
     robots : [],
-    isLoading : false
+    search : "",
 }
 
 export  const reducer = (state=initState, action = {}) => {
-    console.log("in redicer",state)
+    console.log("in reducer",state)
     switch (action.type) {
-        case 'LOADING' : return{...state,isLoading : true}
-        case 'FETCH' : return {...state, robots : action.payload,isLoading : false}
-        case 'SEARCH' : return{...state}
+
+        case GET : return {...state, robots : action.payload}
+
+        case SEARCH : 
+        // const clone = JSON.parse(JSON.stringify(state.robots))
+        state.robots.filter(r => r.name.toLowerCase().includes(state.str))
+        return{...state, search : action.payload}
+
         default: return{...state}
     }
 }
