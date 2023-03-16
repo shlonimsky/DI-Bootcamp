@@ -4,7 +4,7 @@ import { createClient } from 'pexels';
 
 const APIkey = 'yzo5xjljIaO8BzoPN5ANmmhv2uUj5UsgoDxD8K5fnWRn17L1hpcezT4d'
 const client = createClient(APIkey);
-let text = ''
+let text = 'hello'
 
 // client.photos.search({ query, per_page: 30 }).then(photos => console.log(photos)); 
 
@@ -52,13 +52,13 @@ const Page = (props) => {
     console.log(photos)
 
     const handleClick = (e) => {
-        e.preventDefault()
+        // e.preventDefault()
         console.log("in link func",text)
     }
 //onclick={(e) => handleClick(e)}
 return(
 <>
-    <div>
+    <div className='inLine'>
         {/* <form action={`/search/${text}` } > */}
         <input onChange={(e) => handleChange(e)} type="text" placeholder='search'/>
         {/* <button  type='button'> <Link to={'/search'+'/'+text} onclick={(e) => handleClick(e)} >Search</Link></button> */}
@@ -66,7 +66,6 @@ return(
 
         {/* </form> */}
 
-     
     </div>
 
     <div>
@@ -76,13 +75,15 @@ return(
         <Link to={`/food`}>Food</Link>
 
         <h2>{props.theme} pictures</h2>
-        <div>
+        <div className='container'>
+        {photos.lenhtj === 0 ?  <p>Loading</p> : <></>}
             {
                 photos.map(item => {
                     return (
                        <img key={item.id} src={item.src.small} alt='img'/>
                     )
                 })
+            
             }
         </div>
       
