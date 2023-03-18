@@ -14,7 +14,7 @@ useEffect(() => {
     const getMovie = () => dispatch(fetchMovieByID(id))
     getMovie()
 },[])
-
+console.log(movie)
 return (
         (!movie || movie.length === 0) ? (<p>Loading</p>) : (
             <>
@@ -31,7 +31,12 @@ return (
                     <p> <span>Actors : </span>{movie.Actors}</p>
                 </div>
             </div>
-            <Link to={'/'}><h4>Go back to search</h4></Link>
+            <div className="about">
+                <h4>About</h4>
+                <p>{movie.Plot}</p>
+                <Link to={'/'}><h4>Go back to search</h4></Link>
+            </div>
+           
             </>
         )
 )

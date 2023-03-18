@@ -86,5 +86,10 @@ border-radius: 5px;
 h4{
     padding: 10px;
     font-size: 2em;
-
+}
+.about{
+    background-color: rgb(206, 206, 206);
+    padding: 20px;
+    font-size: 120%;
+    margin-top: 10px;
 }
