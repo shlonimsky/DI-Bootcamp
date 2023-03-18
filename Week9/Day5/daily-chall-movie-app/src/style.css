@@ -1,0 +1,90 @@
+*{
+    box-sizing: border-box;
+    margin: 0%;
+}
+body{
+    padding-top: 10%;
+    text-align: center;
+}
+nav{
+    position: fixed;
+    top: 0%;
+    background-color: rgb(29, 28, 28);
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center;
+    padding: 10px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+nav a, footer{
+    color: white;
+}
+nav img{
+    width: 100px;
+    border-radius: 10px;
+}
+/* nav h4{
+    font-size: 2em;
+} */
+footer{
+    background-color: rgb(29, 28, 28);
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+footer a{
+    color: rgb(0, 174, 255);
+}
+.movie_container{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 30px;
+}
+.description{
+    height: 100%;
+}
+.description p {
+    border: solid gray 1px;
+    padding: 10px;
+}
+.description span {
+    font-weight: bold;
+}
+.movies_container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-top: 20px;
+    row-gap: 25px;
+}
+.movies_container > div{
+    border: 1px solid;
+    padding: 5px;
+    margin: 5px;
+    width: 30%;
+}
+.movies_container p{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.movies_container a{
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+    margin-top: 10px;
+}
+input, button {
+padding: 10px;
+border-radius: 5px;
+}
+h4{
+    padding: 10px;
+    font-size: 2em;
+
+}
