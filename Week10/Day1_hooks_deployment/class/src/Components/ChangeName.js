@@ -10,6 +10,8 @@ const ChaangeName = (props) => {
     // )
 
     //destruction
+
+    
     const {name,setName} = useContext(AppContext)
     return(
         <div>

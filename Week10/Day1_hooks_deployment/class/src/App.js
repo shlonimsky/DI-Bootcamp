@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useReducer } from 'react';
 
 //useNavigate HOOK from react-router-dom
 // const func =( ) => {
@@ -12,10 +12,15 @@ import { useState, useEffect } from 'react';
 import ChaangeName from './Components/ChangeName';
 import { createContext } from 'react';
 
+//useReducer : look also MAthCalc component
+import MathCalc from './Components/MathCalc';
+
 export const AppContext = createContext(null) //null to prevent undefine error
 
 function App() {
 const [name,setName] = useState('Claire')
+
+
 
   return (
          <div className="App">
@@ -27,6 +32,7 @@ const [name,setName] = useState('Claire')
               <ChaangeName />
           </AppContext.Provider>
 
+          <MathCalc />
           </header>
         </div>
    
