@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react"
-const apikey = 'wDxhLTEMv37UHBwB7kBcxivNtqRaw5gT'
+// const apikey = 'wDxhLTEMv37UHBwB7kBcxivNtqRaw5gT'
+const apikey = 'OzUJnnupHtHKQo9VDkzgoMLavh8JdvwN'
+
 
 
 const TelAvivWeather = (props) => {

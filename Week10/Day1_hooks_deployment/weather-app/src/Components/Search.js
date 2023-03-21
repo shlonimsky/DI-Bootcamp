@@ -1,8 +1,9 @@
 import { useState,useEffect } from "react"
 import { useDispatch } from "react-redux"
-import { addNewCityKey } from "../Redux/actions"
-const apikey = 'wDxhLTEMv37UHBwB7kBcxivNtqRaw5gT'
-
+import { addNewCityKey, showForecastByKey,showCityName } from "../Redux/actions"
+// const apikey = 'wDxhLTEMv37UHBwB7kBcxivNtqRaw5gT'
+const apikey = 'OzUJnnupHtHKQo9VDkzgoMLavh8JdvwN'
+const LondonKey = '328328'
 
 
 const Search = (props) => {
@@ -23,7 +24,10 @@ const handleChange = (e) => {
 const handleClick = (key,city) => {
     console.log(key)
     setText(city)
-    dispatch(addNewCityKey(key))
+    dispatch(showForecastByKey(key))
+    dispatch(showCityName(city))
+    setSearch([])
+
 }
 console.log(text)
     return(
