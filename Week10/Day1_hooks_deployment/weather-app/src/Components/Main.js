@@ -1,7 +1,7 @@
 import Search from "./Search"
 import {useState, useEffect} from 'react'
 import TelAvivWeather from "./TelAviv"
-
+import { useSelector } from "react-redux"
 const apikey = 'wDxhLTEMv37UHBwB7kBcxivNtqRaw5gT'
 const locationKey = 215854
 
@@ -18,7 +18,8 @@ const Main = (props) => {
 //     // console.log(weather.DailyForecasts[0])
 // },[])
 
-
+const arr = useSelector(state => state.cityKeys)
+console.log("arr of redux",arr)
             return(
                 <div style={{padding:'100px'}}>
                     {<Search />}
