@@ -11,6 +11,9 @@ nav{
   padding: 1.5rem;
   font-size: 1.2em;
 }
+.main_container{
+  margin-top: 5.1rem;
+}
 .fr-spc-bw{
   display: flex;
   flex-direction: row;
@@ -24,9 +27,33 @@ li, a{
   text-decoration: none;
   list-style: none;
   display: inline-block;
-margin: 0 1rem;
+  margin: 0 1rem;
+  cursor: pointer;
 }
 nav, a {
   color: white;
-
+}
+.fc-center{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+input{
+  left: 0;
+  padding: 1%;
+  width: 70vw;
+}
+.drop_down{
+display: flex;
+flex-direction: column;
+border: solid 1px grey;
+}
+h2{
+  text-align: center;
+}
+.card{
+  border: solid;
+  padding: 1rem;
+  margin: 1rem;
 }

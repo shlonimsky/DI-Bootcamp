@@ -1,16 +1,27 @@
 const initState = {
-    cityKeysFav : JSON.parse(localStorage.getItem("cityKeys")) || [],
+    favourites : JSON.parse(localStorage.getItem("favourites")) || [],
     cityKeySearch : '',
-    cityName : ''
+    cityName : '',
+    forecastFav : []
 }
 
 export const reducer = (state=initState,action={}) => {
     console.log(state)
     switch (action.type){
-        case 'SAVE_KEY_TO_FAV' : 
-        state.cityKeys.push(action.payload)
-        console.log(state.cityKeys)
-        return{...state, cityKeys : state.cityKeys};
+
+        case 'SAVE_TO_FAV' : 
+        state.favourites.push(action.payload)
+        console.log("add",state.favourites)
+        localStorage.setItem('favourites',JSON.stringify(state.favourites))
+        return{...state, favourites : state.favourites};
+
+        case 'REMOVE_FROM_FAV' :
+            state.favourites.splice(state.favourites.indexOf(action.payload),1)
+            localStorage.setItem('favourites',JSON.stringify(state.favourites))
+            console.log("remove:",state.favourites)
+            return{...state, favourites : state.favourites};
+
+        case 'FETCH_FORECAST' : return {...state, forecastFav : action.payload}
         
         case 'SHOW_FORECAST_BY_KEY' : return{...state, cityKeySearch : action.payload}
 

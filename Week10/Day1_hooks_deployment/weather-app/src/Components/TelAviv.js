@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 // const apikey = 'wDxhLTEMv37UHBwB7kBcxivNtqRaw5gT'
-const apikey = 'OzUJnnupHtHKQo9VDkzgoMLavh8JdvwN'
-
+// const apikey = 'OzUJnnupHtHKQo9VDkzgoMLavh8JdvwN'
+const apikey = 'N5E41cZSreLev35wgGiXwM8VBAViY0Wm'
 
 
 const TelAvivWeather = (props) => {
@@ -10,10 +10,10 @@ const TelAvivWeather = (props) => {
     const {Day, Night,  Temperature} = props.weather.DailyForecasts[0]
     const dateNow = new Date()
     const hours = dateNow.getHours()
-    console.log(hours, typeof hours)
+    // console.log(hours, typeof hours)
     if (hours>=6 && hours<18) iconNumber =  Day.Icon<10 ? `0${Day.Icon}` : Day.Icon
     else iconNumber = Night.Icon<10 ? `0${Night.Icon}` : Night.Icon
-    console.log(iconNumber)
+    // console.log(iconNumber)
     useEffect(() => setIcon(iconNumber))
 
    return (

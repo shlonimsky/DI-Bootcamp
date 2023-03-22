@@ -1,8 +1,10 @@
 import { useState,useEffect } from "react"
 import { useDispatch } from "react-redux"
-import { addNewCityKey, showForecastByKey,showCityName } from "../Redux/actions"
+import {showForecastByKey,showCityName } from "../Redux/actions"
 // const apikey = 'wDxhLTEMv37UHBwB7kBcxivNtqRaw5gT'
-const apikey = 'OzUJnnupHtHKQo9VDkzgoMLavh8JdvwN'
+// const apikey = 'OzUJnnupHtHKQo9VDkzgoMLavh8JdvwN'
+const apikey = 'N5E41cZSreLev35wgGiXwM8VBAViY0Wm'
+
 const LondonKey = '328328'
 
 
@@ -31,11 +33,11 @@ const handleClick = (key,city) => {
 }
 console.log(text)
     return(
-        <div>{text}
+        <div>
             <input onChange={(e) => handleChange(e)} value={text}/>
             <div>
                 { !search ? <></> : (
-                    <ul>
+                    <ul className="drop_down ">
                         {search.map(el => (
                             <li key={el.Key} onClick={ () => handleClick(el.Key,el.LocalizedName)}>{el.LocalizedName}, {el.Country.LocalizedName}</li>
                         ))}
