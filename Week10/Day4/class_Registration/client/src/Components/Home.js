@@ -7,7 +7,25 @@ import jwt_decode from 'jwt-decode';
 
 const Home = (props) => {
     const [users,setUsers] = useState([]);
-    const [msg, setMsg] = useState('')
+    const [msg, setMsg] = useState('');
+    const {accessToken} = useContext(AppContext)
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        try{
+            console.log('accesToken=>',accessToken.accessToken)
+            const decode = jwt_decode(accessToken.accessToken)
+            console.log(decode)
+
+            const expire = decode.exp;
+            console.log(expire*1000, new Date().getTime());
+            if (expire*1000 < new Date().getTime()) navigate('/login')
+            
+        } catch (err){
+         navigate('/login')
+
+        }
+    },[])
 
     useEffect(()=>{
         const getUsers = async () => {

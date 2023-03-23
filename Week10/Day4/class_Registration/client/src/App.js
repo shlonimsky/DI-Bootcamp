@@ -6,6 +6,7 @@ import Home from './Components/Home';
 import About from './Components/About';
 import LoginRegister from './Components/LoginRegister'
 import Nav from './Components/Nav';
+import { Auth } from './auth/Auth';
 
 export const AppContext = createContext(null);
 
@@ -23,7 +24,7 @@ const [accessToken, setAccessToken] = useState()
         <Route path='/login' element={ <LoginRegister title='Login'/> } />
         <Route path='/register' element={ <LoginRegister title='Register' /> } />
         <Route path='/' element={ <Home /> } />
-        <Route path='/about' element={ <About /> } />
+        <Route path='/about' element={ <Auth>  <About /> </Auth> } />
      </Routes>
     </div>
 
